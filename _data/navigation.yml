@@ -1,0 +1,14 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Introduce"
+    url: https://with-developer.github.io/portfolio
+  - title: "Category"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
