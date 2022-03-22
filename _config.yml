@@ -16,17 +16,17 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "With-developer의 블로그"
+title                    : "이준형의 성장일기"
 title_separator          : "-"
-subtitle                 : "Version 1.0"
+subtitle                 : "IoT 사이버 보안"
 name                     : "이준형(Lee Jun Hyeong)"
-description              : "안녕하세요. 밥값 하는 남자 이준형입니다."
+description              : "With Developer"
 url                      : "https://with-developer.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : https://github.com/with-developer/with-developer.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : IoT 사이버 보안을 공부중인 대학생입니다.
+masthead_title           : Weakness
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
