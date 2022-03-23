@@ -1,14 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T22:22:28+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Jekyll Blog Update List</title><link href="http://localhost:4000/blog/BlogUpdateList/" rel="alternate" type="text/html" title="[임시작성글] Jekyll Blog Update List" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/blog/BlogUpdateList</id><content type="html" xml:base="http://localhost:4000/blog/BlogUpdateList/"><![CDATA[<p><br /></p>
-<h1 id="블로그-업데이트-기록">블로그 업데이트 기록</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T23:37:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Jekyll Blog Update List</title><link href="http://localhost:4000/blog/BlogUpdateList/" rel="alternate" type="text/html" title="[임시작성글] Jekyll Blog Update List" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/blog/BlogUpdateList</id><content type="html" xml:base="http://localhost:4000/blog/BlogUpdateList/"><![CDATA[<h2 id="updating-blog">Updating Blog….</h2>
+<p>Jekyll &amp; Minimal Mistakes 테마 수정 작업 내역입니다.</p>
 
-<h3 id="1-게시글의-하단에-출력되는-업데이트를-게시일로-변경했습니다">1. 게시글의 하단에 출력되는 <code class="language-plaintext highlighter-rouge">업데이트</code>를 <code class="language-plaintext highlighter-rouge">게시일</code>로 변경했습니다.</h3>
+<h3 id="1-날짜-형식을-변경했습니다">1. 날짜 형식을 변경했습니다.</h3>
 
 <div class="notice--primary">
 
   <h4 class="text-right" id="section"><code class="language-plaintext highlighter-rouge">원본</code></h4>
-  <p><img src="/assets/images/2022-03-23-BlogUpdateList/post_update.png" alt="ex_screenshot" /></p>
+  <p><img src="/assets/images/2022-03-23-BlogUpdateList/month_day_year.png" alt="ex_screenshot" /></p>
 
   <h4 class="text-right" id="section-1"><code class="language-plaintext highlighter-rouge">변경내역</code></h4>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{Github repositories}/_includes/page__date.html
+</code></pre></div>  </div>
+
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- 
+  
+  {% assign date_format = site.date_format | default: "%b %d %y" %}
+
+  아래 양식에 맞춰 원하는 방식대로 date_format을 설정
+  %b: month(en)
+  %m: month(num)
+  %d: day
+  %Y: year
+--&gt;</span>
+
+{% assign date_format = site.date_format | default: "%Y년 %m월 %d일" %}
+{% if page.last_modified_at %}
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"page__date"</span><span class="nt">&gt;&lt;strong&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}<span class="nt">&lt;/strong&gt;</span> <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"dt-published"</span> <span class="na">datetime=</span><span class="s">"{{ page.last_modified_at | date: "</span><span class="err">%</span><span class="na">Y-</span><span class="err">%</span><span class="na">m-</span><span class="err">%</span><span class="na">d</span><span class="err">"</span> <span class="err">}}"</span><span class="nt">&gt;</span>{{ page.last_modified_at | date: date_format }}<span class="nt">&lt;/time&gt;&lt;/p&gt;</span>
+{% elsif page.date %}
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"page__date"</span><span class="nt">&gt;&lt;strong&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }}<span class="nt">&lt;/strong&gt;</span> <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">"dt-published"</span> <span class="na">datetime=</span><span class="s">"{{ page.date | date_to_xmlschema }}"</span><span class="nt">&gt;</span>{{ page.date | date: date_format }}<span class="nt">&lt;/time&gt;&lt;/p&gt;</span>
+{% endif %}
+
+
+</code></pre></div>  </div>
+
+  <h4 class="text-right" id="section-2"><code class="language-plaintext highlighter-rouge">수정후</code></h4>
+  <p><img src="/assets/images/2022-03-23-BlogUpdateList/year_month_day.png" alt="ex_screenshot" /></p>
+
+</div>
+
+<hr />
+
+<h3 id="2-게시글의-하단에-출력되는-업데이트를-게시일로-변경했습니다">2. 게시글의 하단에 출력되는 <code class="language-plaintext highlighter-rouge">업데이트</code>를 <code class="language-plaintext highlighter-rouge">게시일</code>로 변경했습니다.</h3>
+
+<div class="notice--primary">
+
+  <h4 class="text-right" id="section-3"><code class="language-plaintext highlighter-rouge">원본</code></h4>
+  <p><img src="/assets/images/2022-03-23-BlogUpdateList/post_update.png" alt="ex_screenshot" /></p>
+
+  <h4 class="text-right" id="section-4"><code class="language-plaintext highlighter-rouge">변경내역</code></h4>
 
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{Github repositories}/_data/ui-text.yml
 </code></pre></div>  </div>
@@ -24,12 +64,42 @@
 
 </code></pre></div>  </div>
 
-  <h4 class="text-right" id="section-2"><code class="language-plaintext highlighter-rouge">수정후</code></h4>
+  <h4 class="text-right" id="section-5"><code class="language-plaintext highlighter-rouge">수정후</code></h4>
   <p><img src="/assets/images/2022-03-23-BlogUpdateList/post_date.png" alt="ex_screenshot" /></p>
 
 </div>
 
-<h3 id="2-게시글의-하단에-출력되는-게시일을-상단에서도-볼-수-있게-수정했습니다">2. 게시글의 하단에 출력되는 <code class="language-plaintext highlighter-rouge">게시일</code>을 상단에서도 볼 수 있게 수정했습니다.</h3>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Jekyll 블로그 업데이트 리스트]]></summary></entry><entry><title type="html">[임시작성글] Markdown Test 001</title><link href="http://localhost:4000/blog/test/" rel="alternate" type="text/html" title="[임시작성글] Markdown Test 001" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/test</id><content type="html" xml:base="http://localhost:4000/blog/test/"><![CDATA[<p>해당 본문은 <code class="language-plaintext highlighter-rouge">Markdown</code>에 익숙해지기 위한 임시 작성글 입니다.
+<hr />
+
+<h3 id="3-read-time값을-date값으로-변경했습니다">3. <code class="language-plaintext highlighter-rouge">Read Time</code>값을 <code class="language-plaintext highlighter-rouge">Date</code>값으로 변경했습니다.</h3>
+
+<div class="notice--primary">
+
+  <h4 class="text-right" id="section-6"><code class="language-plaintext highlighter-rouge">원본</code></h4>
+  <p><img src="/assets/images/2022-03-23-BlogUpdateList/read_time.png" alt="ex_screenshot" /></p>
+
+  <h4 class="text-right" id="section-7"><code class="language-plaintext highlighter-rouge">변경내역</code></h4>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{Github repositories}/_data/ui-text.yml
+</code></pre></div>  </div>
+
+  <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="s">~</span>
+
+<span class="s">~</span>
+
+</code></pre></div>  </div>
+
+  <h4 class="text-right" id="section-8"><code class="language-plaintext highlighter-rouge">수정후</code></h4>
+  <p><img src="/assets/images/2022-03-23-BlogUpdateList/post_date2.png" alt="ex_screenshot" /></p>
+
+</div>
+
+<hr />
+
+<h3 id="4-게시글의-하단에-출력되는-게시일을-상단에서도-볼-수-있게-수정했습니다">4. 게시글의 하단에 출력되는 <code class="language-plaintext highlighter-rouge">게시일</code>을 상단에서도 볼 수 있게 수정했습니다.</h3>
+
+<hr />]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Jekyll 블로그 업데이트 리스트]]></summary></entry><entry><title type="html">[임시작성글] Markdown Test 001</title><link href="http://localhost:4000/blog/test/" rel="alternate" type="text/html" title="[임시작성글] Markdown Test 001" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/test</id><content type="html" xml:base="http://localhost:4000/blog/test/"><![CDATA[<p>해당 본문은 <code class="language-plaintext highlighter-rouge">Markdown</code>에 익숙해지기 위한 임시 작성글 입니다.
   <br /></p>
 <h2 id="1-아래는-코드블럭-예제입니다">1. 아래는 코드블럭 예제입니다!</h2>
 <div class="notice--primary">

@@ -6,7 +6,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[임시작성글] Jekyll Blog Update List",
-        "excerpt":"   블로그 업데이트 기록   1. 게시글의 하단에 출력되는 업데이트를 게시일로 변경했습니다.       원본         변경내역     {Github repositories}/_data/ui-text.yml        ~ ko: &amp;DEFAULT_KO ~ #date_label                 : \"업데이트:\" #date_label값을 \"업데이트\"에서 \"게시일\"로 변경 date_label                 : \"게시일:\"      ~        수정후         2. 게시글의 하단에 출력되는 게시일을 상단에서도 볼 수 있게 수정했습니다.  ","categories": ["Blog"],
+        "excerpt":"Updating Blog…. Jekyll &amp; Minimal Mistakes 테마 수정 작업 내역입니다. 1. 날짜 형식을 변경했습니다. 원본 변경내역 {Github repositories}/_includes/page__date.html &lt;!-- {% assign date_format = site.date_format | default: \"%b %d %y\" %} 아래 양식에 맞춰 원하는 방식대로 date_format을 설정 %b: month(en) %m: month(num) %d: day %Y: year --&gt; {% assign date_format =...","categories": ["Blog"],
         "tags": ["Blog","jekyll","Github","Git"],
         "url": "/blog/BlogUpdateList/",
         "teaser": null
