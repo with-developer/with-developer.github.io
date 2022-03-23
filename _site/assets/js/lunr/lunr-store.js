@@ -4,4 +4,10 @@ var store = [{
         "tags": ["Blog","jekyll","Github","Git"],
         "url": "/blog/test/",
         "teaser": null
+      },{
+        "title": "[임시작성글] Jekyll Blog Update List",
+        "excerpt":"블로그 업데이트 기록..   1. 게시글의 하단에 출력되는 업데이트를 게시일로 변경했습니다.                ### 2. 게시글의 하단에 출력되는 `게시일`을 상단에서도 볼 수 있게 수정했습니다.   ","categories": ["Blog"],
+        "tags": ["Blog","jekyll","Github","Git"],
+        "url": "/blog/BlogUpdateList/",
+        "teaser": null
       }]

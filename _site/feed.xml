@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T20:23:49+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Markdown Test 001</title><link href="http://localhost:4000/blog/test/" rel="alternate" type="text/html" title="[임시작성글] Markdown Test 001" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/test</id><content type="html" xml:base="http://localhost:4000/blog/test/"><![CDATA[<p>해당 본문은 <code class="language-plaintext highlighter-rouge">Markdown</code>에 익숙해지기 위한 임시 작성글 입니다.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T21:21:01+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Jekyll Blog Update List</title><link href="http://localhost:4000/blog/BlogUpdateList/" rel="alternate" type="text/html" title="[임시작성글] Jekyll Blog Update List" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/blog/BlogUpdateList</id><content type="html" xml:base="http://localhost:4000/blog/BlogUpdateList/"><![CDATA[<h1 id="블로그-업데이트-기록">블로그 업데이트 기록..</h1>
+
+<h3 id="1-게시글의-하단에-출력되는-업데이트를-게시일로-변경했습니다">1. 게시글의 하단에 출력되는 <code class="language-plaintext highlighter-rouge">업데이트</code>를 <code class="language-plaintext highlighter-rouge">게시일</code>로 변경했습니다.</h3>
+
+<div class="notice--primary">
+
+  <p><img src="./2022-03-23-BlogUpdateList/post_date.png" alt="ex_screenshot" />
+<img src="./2022-03-23-BlogUpdateList/post_update.png" alt="ex_screenshot" /></p>
+
+  <div>
+
+
+### 2. 게시글의 하단에 출력되는 `게시일`을 상단에서도 볼 수 있게 수정했습니다.
+</div>
+</div>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Jekyll 블로그 업데이트 리스트]]></summary></entry><entry><title type="html">[임시작성글] Markdown Test 001</title><link href="http://localhost:4000/blog/test/" rel="alternate" type="text/html" title="[임시작성글] Markdown Test 001" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/test</id><content type="html" xml:base="http://localhost:4000/blog/test/"><![CDATA[<p>해당 본문은 <code class="language-plaintext highlighter-rouge">Markdown</code>에 익숙해지기 위한 임시 작성글 입니다.
   <br /></p>
 <h2 id="1-아래는-코드블럭-예제입니다">1. 아래는 코드블럭 예제입니다!</h2>
 <div class="notice--primary">
