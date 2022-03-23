@@ -16,10 +16,10 @@
       {% assign words_per_minute = document.words_per_minute | default: site.words_per_minute | default: 200 %}
       {% assign words = document.content | strip_html | number_of_words %}
 
-      <span class="page__meta-date2">
+      <span class="page__meta-date">
         {% assign post_format = "%Y년 %m월 %d일" | default:"%Y %m %d" %}
-        <p class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ post.date | date:post_format }}</p>
-        
+        <class="page__meta"><i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i> {{ post.date | date:post_format }}</class>
+
       </span>
     {% endif %}
   </p>
