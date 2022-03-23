@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T23:37:07+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Jekyll Blog Update List</title><link href="http://localhost:4000/blog/BlogUpdateList/" rel="alternate" type="text/html" title="[임시작성글] Jekyll Blog Update List" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/blog/BlogUpdateList</id><content type="html" xml:base="http://localhost:4000/blog/BlogUpdateList/"><![CDATA[<h2 id="updating-blog">Updating Blog….</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-23T23:53:22+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[임시작성글] Jekyll Blog Update List</title><link href="http://localhost:4000/blog/BlogUpdateList/" rel="alternate" type="text/html" title="[임시작성글] Jekyll Blog Update List" /><published>2022-03-23T00:00:00+09:00</published><updated>2022-03-23T00:00:00+09:00</updated><id>http://localhost:4000/blog/BlogUpdateList</id><content type="html" xml:base="http://localhost:4000/blog/BlogUpdateList/"><![CDATA[<h2 id="updating-blog">Updating Blog….</h2>
 <p>Jekyll &amp; Minimal Mistakes 테마 수정 작업 내역입니다.</p>
 
 <h3 id="1-날짜-형식을-변경했습니다">1. 날짜 형식을 변경했습니다.</h3>
@@ -83,10 +83,45 @@
   <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{Github repositories}/_data/ui-text.yml
 </code></pre></div>  </div>
 
-  <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="s">~</span>
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% assign document = post | default: page %}
+{% if document.read_time or document.show_date %}
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"page__meta"</span><span class="nt">&gt;</span>
+    {% if document.show_date and document.date %}
+      {% assign date = document.date %}
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"page__meta-date"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"far {% if include.type == 'grid' and document.read_time and document.show_date %}fa-fw {% endif %}fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span>
+        {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+        <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">"{{ date | date_to_xmlschema }}"</span><span class="nt">&gt;</span>{{ date | date: date_format }}<span class="nt">&lt;/time&gt;</span>
+      <span class="nt">&lt;/span&gt;</span>
+    {% endif %}
 
-<span class="s">~</span>
+    {% if document.read_time and document.show_date %}<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"page__meta-sep"</span><span class="nt">&gt;&lt;/span&gt;</span>{% endif %}
+
+    {% if document.read_time %}
+      {% assign words_per_minute = document.words_per_minute | default: site.words_per_minute | default: 200 %}
+      {% assign words = document.content | strip_html | number_of_words %}
+    <span class="c">&lt;!--
+      &lt;span class="page__meta-readtime"&gt;
+       &lt;i class="far {% if include.type == 'grid' and document.read_time and document.show_date %}fa-fw {% endif %}fa-clock" aria-hidden="true"&gt;&lt;/i&gt;
+       {% if words &lt; words_per_minute %}
+       {{ site.data.ui-text[site.locale].less_than | default: "less than" }} 1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+       {% elsif words == words_per_minute %}
+       1 {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+       {% else %}
+       {{ words | divided_by: words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
+       {% endif %}
+      &lt;/span&gt;
+      
+      read_time부분을 모두 지우고, date값이 들어있는 span을 생성합니다.
+     --&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"page__meta-date"</span><span class="nt">&gt;</span>
+        {% assign post_format = "%Y년 %m월 %d일" | default:"%Y %m %d" %}
+        <span class="nt">&lt;class</span><span class="err">="</span><span class="na">page__meta</span><span class="err">"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"far fa-fw fa-calendar-alt"</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;&lt;/i&gt;</span> {{ post.date | date:post_format }}<span class="nt">&lt;/class&gt;</span>
+      <span class="nt">&lt;/span&gt;</span>
+    {% endif %}
+  <span class="nt">&lt;/p&gt;</span>
+{% endif %}
 
 </code></pre></div>  </div>
 
