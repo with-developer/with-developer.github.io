@@ -111,7 +111,7 @@ date_label                 : "게시일:"
 {: .text-right }
 
 ```
-{Github repositories}/_data/ui-text.yml
+{Github repositories}/_includes/page__meta.html
 ```
 
 ```html
@@ -144,7 +144,7 @@ date_label                 : "게시일:"
        {{ words | divided_by: words_per_minute }} {{ site.data.ui-text[site.locale].minute_read | default: "minute read" }}
        {% endif %}
       </span>
-      
+
       read_time부분을 모두 지우고, date값이 들어있는 span을 생성합니다.
      -->
       <span class="page__meta-date">
