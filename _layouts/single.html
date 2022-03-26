@@ -29,9 +29,12 @@ layout: default
           {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>{% endif %}
-          <date class="page__meta">
+          <meta-data class="page__meta">
+          <br>
+          {% include page__taxonomy.html %}
           {% include page__date_top.html %} 
-          </date>
+          
+          </meta-data>
           <br>
 
           <!-- 
@@ -58,8 +61,10 @@ layout: default
         {% if site.data.ui-text[site.locale].meta_label %}
           <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
+        <!--
         {% include page__taxonomy.html %}
         {% include page__date.html %}
+        -->
       </footer>
 
       {% if page.share %}{% include social-share.html %}{% endif %}

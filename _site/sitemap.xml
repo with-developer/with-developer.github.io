@@ -5,10 +5,6 @@
 <lastmod>2022-03-22T00:00:00+09:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/Blog-UpdateList/</loc>
-<lastmod>2022-03-23T00:00:00+09:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/blog/Blog-update-meta/</loc>
 <lastmod>2022-03-24T00:00:00+09:00</lastmod>
 </url>
@@ -18,6 +14,10 @@
 </url>
 <url>
 <loc>http://localhost:4000/blog/Blog-Update-date-format/</loc>
+<lastmod>2022-03-24T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/blog/Blog-footer/</loc>
 <lastmod>2022-03-24T00:00:00+09:00</lastmod>
 </url>
 <url>
