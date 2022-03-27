@@ -13,8 +13,6 @@ toc_sticky: true
 date: 2022-03-24
 last_modified_at: 2022-03-24
 ---
-
-
 ## Footer를 Header로 변경
 태그, 카테고리, 게시일 정보를 게시글 상단으로 이동했습니다.
 

@@ -29,14 +29,10 @@ layout: default
           {% if page.title %}<h1 id="page-title" class="page__title p-name" itemprop="headline">
             <a href="{{ page.url | absolute_url }}" class="u-url" itemprop="url">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</a>
           </h1>{% endif %}
-          <meta-data class="page__meta">
-          <br>
+          <meta-data class="page__meta", border-bottom: 1px solid #f2f3f3>
           {% include page__taxonomy.html %}
           {% include page__date_top.html %} 
-          
           </meta-data>
-          <br>
-
           <!-- 
             {% include page__meta.html %} 
             read_time 메뉴 삭제
