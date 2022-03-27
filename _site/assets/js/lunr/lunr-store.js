@@ -1,10 +1,4 @@
 var store = [{
-        "title": "[임시작성글] Markdown Test 001",
-        "excerpt":"해당 본문은 Markdown에 익숙해지기 위한 임시 작성글 입니다.      1. 아래는 코드블럭 예제입니다!         안에 코드도 넣을 수 있다. 아래처럼!         public class BootSpringBootApplication {     public static void main(String[] args) {       System.out.println(\"Hello, Honeymon\");     }   }            java 공부를 열심히 하자     Security 공부를 열심히 하자      ","categories": ["Blog"],
-        "tags": ["Blog","jekyll","Github","Git"],
-        "url": "/blog/test/",
-        "teaser": null
-      },{
         "title": "[Minimal mistakes] Meta 데이터 변경",
         "excerpt":"Page__meta 수정 Page__meta 데이터중 출력되는 read_time값을 date값으로 변경했습니다. 원본 변경내역 {Github repositories}/_includes/page__meta.html {% assign document = post | default: page %} {% if document.read_time or document.show_date %} &lt;p class=\"page__meta\"&gt; {% if document.show_date and document.date %} {% assign date = document.date %} &lt;span class=\"page__meta-date\"&gt; &lt;i class=\"far {% if include.type == 'grid'...","categories": ["Blog"],
         "tags": ["Blog","jekyll","Github","Minimal mistakes"],
@@ -24,7 +18,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Minimal mistakes] footer 위치 변경",
-        "excerpt":"Footer를 Header로 변경  태그, 카테고리, 게시일 정보를 게시글 상단으로 이동했습니다.  ","categories": ["Blog"],
+        "excerpt":"Footer를 Header로 변경 태그, 카테고리, 게시일 정보를 게시글 상단으로 이동했습니다. 원본 변경내역 {Github repositories}/_include/single.html ~ &lt;div class=\"page__inner-wrap\"&gt; {% unless page.header.overlay_color or page.header.overlay_image %} &lt;header&gt; {% if page.title %}&lt;h1 id=\"page-title\" class=\"page__title p-name\" itemprop=\"headline\"&gt; &lt;a href=\"{{ page.url | absolute_url }}\" class=\"u-url\" itemprop=\"url\"&gt;{{ page.title | markdownify | remove: \"&lt;p&gt;\" | remove: \"&lt;/p&gt;\" }}&lt;/a&gt;...","categories": ["Blog"],
         "tags": ["Blog","jekyll","Github","Minimal mistakes"],
         "url": "/blog/Blog-footer/",
         "teaser": null

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-26T20:05:24+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[Minimal mistakes] Meta 데이터 변경</title><link href="http://localhost:4000/blog/Blog-update-meta/" rel="alternate" type="text/html" title="[Minimal mistakes] Meta 데이터 변경" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/blog/Blog-update-meta</id><content type="html" xml:base="http://localhost:4000/blog/Blog-update-meta/"><![CDATA[<h2 id="page__meta-수정">Page__meta 수정</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-03-27T23:38:05+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[Minimal mistakes] Meta 데이터 변경</title><link href="http://localhost:4000/blog/Blog-update-meta/" rel="alternate" type="text/html" title="[Minimal mistakes] Meta 데이터 변경" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/blog/Blog-update-meta</id><content type="html" xml:base="http://localhost:4000/blog/Blog-update-meta/"><![CDATA[<h2 id="page__meta-수정">Page__meta 수정</h2>
 
 <p>Page__meta 데이터중 출력되는 read_time값을 date값으로 변경했습니다.</p>
 
@@ -122,23 +122,67 @@
   <p><img src="/assets/images/2022-03-24-Blog-Update-date-format/year_month_day.png" alt="ex_screenshot" /></p>
 
 </div>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Minimal mistakes" /><summary type="html"><![CDATA[날짜 포맷을 수정했습니다.]]></summary></entry><entry><title type="html">[Minimal mistakes] footer 위치 변경</title><link href="http://localhost:4000/blog/Blog-footer/" rel="alternate" type="text/html" title="[Minimal mistakes] footer 위치 변경" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/blog/Blog-footer</id><content type="html" xml:base="http://localhost:4000/blog/Blog-footer/"><![CDATA[<h2 id="footer를-header로-변경">Footer를 Header로 변경</h2>
-<p>태그, 카테고리, 게시일 정보를 게시글 상단으로 이동했습니다.</p>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Minimal mistakes" /><summary type="html"><![CDATA[게시글 하단에 출력되는 데이터를 상단으로 이동했습니다.]]></summary></entry><entry><title type="html">[임시작성글] Markdown Test 001</title><link href="http://localhost:4000/blog/test/" rel="alternate" type="text/html" title="[임시작성글] Markdown Test 001" /><published>2022-03-22T00:00:00+09:00</published><updated>2022-03-22T00:00:00+09:00</updated><id>http://localhost:4000/blog/test</id><content type="html" xml:base="http://localhost:4000/blog/test/"><![CDATA[<p>해당 본문은 <code class="language-plaintext highlighter-rouge">Markdown</code>에 익숙해지기 위한 임시 작성글 입니다.
-  <br /></p>
-<h2 id="1-아래는-코드블럭-예제입니다">1. 아래는 코드블럭 예제입니다!</h2>
+<p>태그, 카테고리, 게시일 정보를 게시글 상단으로 이동했습니다.</p>
+
 <div class="notice--primary">
-  <!--minimal mistakes의 기능중 하나로 블럭 생성을 해줌-->
+  <h4 class="text-right" id="section"><code class="language-plaintext highlighter-rouge">원본</code></h4>
+  <p><img src="/assets/images/2022-03-25-Blog-footer/footer.png" alt="ex_screenshot" /></p>
 
-  <p>안에 <code class="language-plaintext highlighter-rouge">코드</code>도 넣을 수 있다. 아래처럼!</p>
+  <h4 class="text-right" id="section-1"><code class="language-plaintext highlighter-rouge">변경내역</code></h4>
 
-  <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">BootSpringBootApplication</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, Honeymon"</span><span class="o">);</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{Github repositories}/_include/single.html
 </code></pre></div>  </div>
 
-  <ul>
-    <li>java 공부를 열심히 하자</li>
-    <li>Security 공부를 열심히 하자</li>
-  </ul>
-</div>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Git" /><summary type="html"><![CDATA[Markdown 임시작성글 입니다.]]></summary></entry></feed>
+  <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+~
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"page__inner-wrap"</span><span class="nt">&gt;</span>
+      {% unless page.header.overlay_color or page.header.overlay_image %}
+        <span class="nt">&lt;header&gt;</span>
+          {% if page.title %}<span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"page-title"</span> <span class="na">class=</span><span class="s">"page__title p-name"</span> <span class="na">itemprop=</span><span class="s">"headline"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ page.url | absolute_url }}"</span> <span class="na">class=</span><span class="s">"u-url"</span> <span class="na">itemprop=</span><span class="s">"url"</span><span class="nt">&gt;</span>{{ page.title | markdownify | remove: "<span class="nt">&lt;p&gt;</span>" | remove: "<span class="nt">&lt;/p&gt;</span>" }}<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/h1&gt;</span>{% endif %}
+          <span class="nt">&lt;meta-data</span> <span class="na">class=</span><span class="s">"page__meta"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;br&gt;</span>
+          {% include page__taxonomy.html %}
+          {% include page__date.html %} 
+          <span class="nt">&lt;/meta-data&gt;</span>
+          <span class="c">&lt;!-- header 태그에  날짜, 태그 정보를 추가했습니다.--&gt;</span>
+          <span class="nt">&lt;br&gt;</span>
+        <span class="nt">&lt;/header&gt;</span>
+      {% endunless %}
+
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"page__content e-content"</span> <span class="na">itemprop=</span><span class="s">"text"</span><span class="nt">&gt;</span>
+        {% if page.toc %}
+          <span class="nt">&lt;aside</span> <span class="na">class=</span><span class="s">"sidebar__right {% if page.toc_sticky %}sticky{% endif %}"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"toc"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;header&gt;&lt;h4</span> <span class="na">class=</span><span class="s">"nav__title"</span><span class="nt">&gt;&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-{{ page.toc_icon | default: 'file-alt' }}"</span><span class="nt">&gt;&lt;/i&gt;</span> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}<span class="nt">&lt;/h4&gt;&lt;/header&gt;</span>
+              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+            <span class="nt">&lt;/nav&gt;</span>
+          <span class="nt">&lt;/aside&gt;</span>
+        {% endif %}
+        {{ content }}
+        {% if page.link %}<span class="nt">&lt;div&gt;&lt;a</span> <span class="na">href=</span><span class="s">"{{ page.link }}"</span> <span class="na">class=</span><span class="s">"btn btn--primary"</span><span class="nt">&gt;</span>{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}<span class="nt">&lt;/a&gt;&lt;/div&gt;</span>{% endif %}
+      <span class="nt">&lt;/section&gt;</span>
+
+      <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"page__meta"</span><span class="nt">&gt;</span>
+        {% if site.data.ui-text[site.locale].meta_label %}
+          <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"page__meta-title"</span><span class="nt">&gt;</span>{{ site.data.ui-text[site.locale].meta_label }}<span class="nt">&lt;/h4&gt;</span>
+        {% endif %}
+        <span class="c">&lt;!--
+        {% include page__taxonomy.html %}
+        {% include page__date.html %}
+        footer 태그에 출력되던 기존의 날짜, 태그 정보를 삭제했습니다.
+        --&gt;</span>
+      <span class="nt">&lt;/footer&gt;</span>
+
+      {% if page.share %}{% include social-share.html %}{% endif %}
+      
+~
+
+</code></pre></div>  </div>
+
+  <h4 class="text-right" id="section-2"><code class="language-plaintext highlighter-rouge">수정후</code></h4>
+  <p><img src="/assets/images/2022-03-25-Blog-footer/header.png" alt="ex_screenshot" /></p>
+
+</div>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Blog" /><category term="Blog" /><category term="jekyll" /><category term="Github" /><category term="Minimal mistakes" /><summary type="html"><![CDATA[게시글 하단에 출력되는 데이터를 상단으로 이동했습니다.]]></summary></entry></feed>
