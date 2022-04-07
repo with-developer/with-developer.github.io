@@ -293,6 +293,8 @@ body {
   padding-top: 20px;
   border-bottom: 1px solid #f2f3f3;
 
+  
+
   p {
     margin: 0;
   }
@@ -301,6 +303,27 @@ body {
     color: inherit;
   }
 }
+
+.page__meta2 {
+  margin-top: 0em;
+  color: $muted-text-color;
+  font-family: $sans-serif;
+  font-size: $type-size-6;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  //border-bottom: 1px solid #f2f3f3;
+
+  
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
 
 .page__meta-title {
   margin-bottom: 10px;
