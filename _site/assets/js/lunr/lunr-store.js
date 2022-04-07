@@ -24,7 +24,7 @@ var store = [{
         "teaser": null
       },{
         "title": "[Dreamhack] Login-1 풀이",
-        "excerpt":" ","categories": ["Dreamhack"],
+        "excerpt":"문제 정보 python으로 작성된 로그인 기능을 가진 서비스입니다. “admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요. 문제 힌트 BackupCode Race Condition Attack 문제 풀이 메인 페이지 로그인 회원가입 비밀번호 찾기 특이하게 비밀번호를 찾을 때 BackupCode를 사용한다. 회원가입 완료 회원가입에 성공하면 BackupCode가 생성된다. BackupCode 함수 def makeBackupcode(): return random.randrange(100) 문제 파일을 다운로드...","categories": ["Dreamhack"],
         "tags": ["Dreamhack","wargame","WebHacking"],
         "url": "/dreamhack/Dreamhack-login-1/",
         "teaser": null

