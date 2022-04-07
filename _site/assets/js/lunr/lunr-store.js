@@ -22,4 +22,10 @@ var store = [{
         "tags": ["Blog","jekyll","Github","Minimal mistakes"],
         "url": "/blog/Blog-footer/",
         "teaser": null
+      },{
+        "title": "[Dreamhack] Login-1 풀이",
+        "excerpt":" ","categories": ["Dreamhack"],
+        "tags": ["Dreamhack","wargame","WebHacking"],
+        "url": "/dreamhack/Dreamhack-login-1/",
+        "teaser": null
       }]
