@@ -15,11 +15,11 @@ html {
   }
 
   @include breakpoint($large) {
-    font-size: 20px;
+    font-size: 18px; //defalut값은 20이였음. 2022.04.10 수정
   }
 
   @include breakpoint($x-large) {
-    font-size: 22px;
+    font-size: 18px; //defalut값은 22이였음. 2022.04.10 수정
   }
 
   -webkit-text-size-adjust: 100%;
